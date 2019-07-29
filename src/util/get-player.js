@@ -49,6 +49,7 @@ export default (el, props, onPlayerReady, onStateChange) => {
         onStateChange
       )
     case 'youtube':
+	console.warn(mediaID)
       return new YouTube(
         el,
         id,
