@@ -14,7 +14,7 @@ const parser = (source) => {
   if (match) return { mediaID: match[3], type: 'vimeo' }
 
   // schemes like soundcloud://{ID}
-  const scheme = /(youtube|vimeo|soundcloud)?:\/\/(\w+)($|\/|)/
+  const scheme = /(youtube|vimeo|soundcloud)?:\/\/((\b[^\s]+\b)((?<=\.\w).)?)($|\/|)/
   match = source.match(scheme)
   if (match && match.length === 4) return { type: match[1], mediaID: match[2] }
   return null
